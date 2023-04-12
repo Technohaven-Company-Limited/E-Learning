@@ -11,7 +11,7 @@
             <div class="col-3"></div>
             <div class="col-6">
                 <div id="background_box">
-                    <form>
+                    <form action=" ">
 
                         <h1 style="text-align: center; margin: 10% ">SIGN UP</h1>
 
