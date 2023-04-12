@@ -19,14 +19,14 @@
             <div id="background_box">
                 <form action=" ">
 
-                    <h1 style="text-align: center; margin: 10% ">LOGIN HERE</h1>
+                    <h1 style="text-align: center; margin: 5% ">LOGIN HERE</h1>
 
-                    <div style="text-align: center; margin: 5% " >
+                    <div style="text-align: center; margin: 2% " >
                         <label name="username">USERNAME:</label>
                         <input type="text"  name="username" placeholder="Enter Here"/>
                     </div>
 
-                    <div style="text-align: center; margin: 5% ">
+                    <div style="text-align: center; margin: 2% ">
                         <label name="password"> PASSWORD:</label>
                         <input type="password"  name="password" placeholder="Enter Here"/>
                     </div>
