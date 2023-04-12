@@ -38,6 +38,8 @@
 
 
                 </form>
+
+                <p style="text-align: center">Do not have any account? <a href="/register">Register here</a></p>
             </div>
         </div>
         <div class="col-3"></div>

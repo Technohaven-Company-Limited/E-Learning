@@ -1,0 +1,24 @@
+.card{
+    box-shadow: 0 2px 7px rgb(178, 190, 181);
+}
+
+#header{
+    font-weight: bold;
+    color: white;
+}
+
+#btn_div{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    text-decoration: none;
+}
+
+#account{
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 15px;
+    font-weight: bold;
+}
