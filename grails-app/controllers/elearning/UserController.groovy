@@ -31,9 +31,57 @@ class UserController {
             render(view: "create", model: [users: user])
         } else {
             userService.save(user)
+<<<<<<< Updated upstream
 //            redirect(view: "loginPage")
             redirect(action: "index")
         }
 //        respond userService.save( user)
     }
+=======
+            redirect(view: "loginPage")
+//            redirect(action: "index")
+        }
+    }
+//    def index() {
+//        def users = User.list()
+//        [users: users]
+//    }
+//
+//    def create() {
+//        [user: new User()]
+//    }
+//
+//    def save(User user) {
+//        def roleName = request.getParameter("roleName")
+//        def fullName = request.getParameter("fullName")
+//        def email = request.getParameter("email")
+//        def userName = request.getParameter("userName")
+//        def passWord = request.getParameter("passWord")
+//
+//        if (user.hasErrors()) {
+//            render(view: "create", model: [user: user])
+//        } else {
+//            user.save()
+//            redirect(action: "index")
+//        }
+//    }
+//
+//    def edit(User user) {
+//        [user: user]
+//    }
+//
+//    def update(User user) {
+//        if (user.hasErrors()) {
+//            render(view: "edit", model: [user: user])
+//        } else {
+//            user.save()
+//            redirect(action: "index")
+//        }
+//    }
+//
+//    def delete(User user) {
+//        user.delete()
+//        redirect(action: "index")
+//    }
+>>>>>>> Stashed changes
 }
