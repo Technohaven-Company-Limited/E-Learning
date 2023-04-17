@@ -113,7 +113,7 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: update
+            dbCreate: create
             url: jdbc:mysql://localhost/elearning
     test:
         dataSource:
