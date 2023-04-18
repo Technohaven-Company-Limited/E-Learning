@@ -2,13 +2,14 @@ package elearning
 
 class UserController {
 
-    static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
+    static  allowedMethods = [get: "GET", list: "GET", save: "POST", update: "PUT"]
 
      UserService userService
 
     def index() {
         def user = User.list()
         [users: user]
+//        render "testing render text"
     }
 
     def create() {
@@ -24,64 +25,36 @@ class UserController {
 
     def delete(Long id){
         respond userService.delete(id)
+        redirect(action: "index")
+//        def user = User.get(id)
+//        user.delete()
+//        redirect(action: "index")
     }
-
-    def save(User user){
-        if (user.hasErrors()) {
-            render(view: "create", model: [users: user])
-        } else {
-            userService.save(user)
-<<<<<<< Updated upstream
-//            redirect(view: "loginPage")
-            redirect(action: "index")
-        }
-//        respond userService.save( user)
-    }
-=======
-            redirect(view: "loginPage")
-//            redirect(action: "index")
-        }
-    }
-//    def index() {
-//        def users = User.list()
-//        [users: users]
-//    }
-//
-//    def create() {
-//        [user: new User()]
-//    }
-//
-//    def save(User user) {
-//        def roleName = request.getParameter("roleName")
-//        def fullName = request.getParameter("fullName")
-//        def email = request.getParameter("email")
-//        def userName = request.getParameter("userName")
-//        def passWord = request.getParameter("passWord")
-//
-//        if (user.hasErrors()) {
-//            render(view: "create", model: [user: user])
-//        } else {
-//            user.save()
-//            redirect(action: "index")
-//        }
-//    }
-//
-//    def edit(User user) {
-//        [user: user]
-//    }
-//
-//    def update(User user) {
-//        if (user.hasErrors()) {
-//            render(view: "edit", model: [user: user])
-//        } else {
-//            user.save()
-//            redirect(action: "index")
-//        }
-//    }
-//
 //    def delete(User user) {
 //        user.delete()
 //        redirect(action: "index")
 //    }
->>>>>>> Stashed changes
+
+    def save(User user){
+        if (user.hasErrors()) {
+            render(view: "register", model: [users: user])
+        } else {
+            userService.save(user)
+//            render(view: "loginPage")
+            redirect(action: "index")
+        }
+    }
+
+    def edit(User user) {
+        [user: user]
+    }
+
+    def update(User user) {
+        if (user.hasErrors()) {
+            render(view: "edit", model: [user: user])
+        } else {
+            userService.save(user)
+            redirect(action: "index")
+        }
+    }
 }
