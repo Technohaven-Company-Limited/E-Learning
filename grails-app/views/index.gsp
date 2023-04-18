@@ -10,12 +10,8 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <div id="background_box">
-                    <form action=" ">
-
-
-
-                    </form>
+                <div id="background_box" align="center">
+                    <a class="btn btn-lg btn-success" href="/login">Start Here</a>
                 </div>
             </div>
             <div class="col-3"></div>
