@@ -10,7 +10,7 @@ class Course {
     String courseDuration
     double coursePrice
     double courseDiscount
-    static hasMany = [lesson: Lesson, user: User]
+    static hasMany = [user: User]
     static belongsTo = [_user: User]
 
     static constraints = {

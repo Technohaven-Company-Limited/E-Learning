@@ -6,21 +6,30 @@ class LessonController {
 
      LessonService lessonService
 
+    def index() {
+        def lesson = Lesson.list()
+        [lessons: lesson]
+    }
+
     def get(Long id){
-        respond lessonService.get(id)
+         lessonService.get(id)
     }
     def list(Lesson lesson){
-        respond lessonService.list(lesson)
+         lessonService.list(lesson)
     }
 
     def delete(Long id){
-        respond lessonService.delete(id)
+        lessonService.delete(id)
     }
 
     def save(Lesson lesson){
-
-        respond lessonService.save(lesson)
+        if (lesson.hasErrors()) {
+            render(view: "uploadLesson", model: [users: lesson])
+        } else {
+            lessonService.save(lesson)
+//            render(view: "loginPage")
+            redirect(action: "index")
+        }
     }
 
-    def index() { }
 }

@@ -8,19 +8,29 @@ class ContactUsController {
 
 
 
-    def index() { }
-
-
-    def get(Long id){
-        respond contactUsService.get(id)
+    def index() {
+        def contactUs = ContactUs.list()
+        [contactus: contactUs]
     }
 
-    def delete(Long id){
-        respond contactUsService.delete(id)
-    }
+
+//    def get(Long id){
+//        respond contactUsService.get(id)
+//    }
+//
+//    def delete(Long id){
+//        respond contactUsService.delete(id)
+//    }
 
     def save(ContactUs contactUs){
-        respond contactUsService.save(contactUs)
+        if (contactUs.hasErrors()) {
+            render(view: "contactPage", model: [contactus: contactUs])
+        } else {
+            contactUsService.save(contactUs)
+//            render(view: "loginPage")
+            redirect(action: "index")
+
+        }
     }
 
 

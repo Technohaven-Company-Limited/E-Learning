@@ -5,12 +5,13 @@ class Lesson {
     String lessonName
     String lessonDescription
     String lessonDuration
-    static belongsTo = [course: Course]
+    String lessonCourse
 
     static constraints = {
-        lessonCode blank: false, nullable: false, unique: true
-        lessonName blank: false, nullable: false, size: 5..150
-        lessonDescription blank: false, nullable: false
-        lessonDuration blank: false, nullable: false
+        lessonCode nullable: false, unique: true
+        lessonName nullable: false, size: 5..150
+        lessonDescription nullable: false
+        lessonDuration nullable: false
+        lessonCourse nullable: true
     }
 }
