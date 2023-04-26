@@ -3,25 +3,51 @@ package elearning
 class CourseController {
 
 
-    static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST"]
+    static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
 
     CourseService courseService
 
+    def index() {
+        def course = Course.list()
+        [courses: course]
+    }
+
+    def create() {
+        [course: new Course()]
+    }
+
     def get(Long id){
-        respond courseService.get(id)
+        courseService.get(id)
     }
     def list(Course course){
-        respond courseService.list(course)
+        courseService.list(course)
     }
 
     def delete(Long id){
-        respond courseService.delete(id)
+        courseService.delete(id)
+        redirect action: "index"
     }
 
     def save(Course course){
-
-        respond courseService.save(course)
+        if (course.hasErrors()) {
+            render(view: "uploadCourse", model: [courses: course])
+        } else {
+            courseService.save(course)
+            redirect(action: "index")
+        }
     }
 
-    def index() { }
+    def edit(Course course) {
+        [course: course]
+    }
+
+    def update(Course course) {
+        if (course.hasErrors()) {
+            render(view: "edit", model: [course: course])
+        } else {
+            courseService.save(course)
+            redirect(action: "index")
+        }
+    }
+
 }

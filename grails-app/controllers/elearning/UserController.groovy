@@ -19,10 +19,10 @@ class UserController {
     }
 
     def get(Long id){
-        respond userService.get(id)
+        userService.get(id)
     }
     def list(User user){
-        respond userService.list(user)
+        userService.list(user)
     }
 
     def delete(Long id){

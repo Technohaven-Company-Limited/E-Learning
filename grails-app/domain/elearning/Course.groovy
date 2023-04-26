@@ -23,6 +23,10 @@ class Course {
         courseDuration blank: false, nullable: true
         coursePrice blank: false, nullable: false
         courseDiscount blank: false, nullable: true
-        user nullable: true
+        _user nullable: true
+    }
+
+    String toString(){
+        "${courseCode}"
     }
 }

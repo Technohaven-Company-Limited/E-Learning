@@ -13,6 +13,7 @@ class UrlMappings {
         "/login"(view:"/user/loginPage")
         "/register"(view:"/user/register")
         "/lesson"(view:"/lesson/uploadLesson")
+        "/course"(view:"/course/uploadCourse")
         "/contactus"(view:"/contactUs/contactPage")
         "500"(view:'/error')
         "404"(view:'/notFound')
