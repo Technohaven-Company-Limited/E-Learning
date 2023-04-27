@@ -47,8 +47,8 @@
 <!--Card-->
 <div class="container p-5 mt-1 border border-1" style="border-radius: 15px; background-color: aliceblue;">
     <div class="row">
-        <g:each bean="course" in="${courses}" var="course">
-            <div class="col-md-3">
+        <g:each controller="course" in="${courses}" var="course">
+            <div class="col-3">
                 <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">
                     <a href=""><g:img class="card-img-top" dir="images" file="Groovy.png" alt="Card image cap" style="height: 150px; border-radius:5px;"/></a>
                     <div class="card-body" style="line-height: 0px;">
@@ -69,7 +69,6 @@
                             </tr>
                         </table>
                         <a href="#" class="btn btn-primary" style="padding-top: 0px; padding-bottom: 0px; font-size: 11px;">Buy now</a>
-                        <a href="#" class="btn btn-outline-warning" style="margin-left: 20px; padding-top: 0px; padding-bottom: 0px; font-size: 11px;"><i class="fa-solid fa-cart-plus"></i> Add to cart</a>
                     </div>
                 </div>
             </div>

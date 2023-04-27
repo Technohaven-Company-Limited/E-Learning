@@ -10,6 +10,7 @@ class CourseController {
     def index() {
         def course = Course.list()
         [courses: course]
+//        render(view:'trainerHome', model:[courses: course])
     }
 
     def create() {
@@ -19,6 +20,7 @@ class CourseController {
     def get(Long id){
         courseService.get(id)
     }
+
     def list(Course course){
         courseService.list(course)
     }
