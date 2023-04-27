@@ -89,6 +89,14 @@
                             </div>
                         </div>
                         <br>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-3"><label>Course Logo</label></div>
+                            <div class="col-8">
+                                <g:textField class="form-control" name="courseLogo" value="${courseLogo}"/>
+                            </div>
+                        </div>
+                        <br>
                         <div style="display: flex; justify-content: center;">
                             <g:submitButton class="btn btn-outline-primary" name="save" value="Submit"/>
                             <button class="btn btn-outline-danger ml-3">Reset</button>

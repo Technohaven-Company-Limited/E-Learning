@@ -23,6 +23,10 @@ class CourseController {
         courseService.list(course)
     }
 
+    def show() {
+        [course: Course.get(params.id)]
+    }
+
     def delete(Long id){
         courseService.delete(id)
         redirect action: "index"

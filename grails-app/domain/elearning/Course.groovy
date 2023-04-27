@@ -10,8 +10,7 @@ class Course {
     String courseDuration
     double coursePrice
     double courseDiscount
-    static hasMany = [user: User]
-    static belongsTo = [_user: User]
+    String courseLogo
 
     static constraints = {
         courseCode blank: false, nullable: false, unique: true
@@ -23,7 +22,7 @@ class Course {
         courseDuration blank: false, nullable: true
         coursePrice blank: false, nullable: false
         courseDiscount blank: false, nullable: true
-        _user nullable: true
+        courseLogo blank: false, nullable: false
     }
 
     String toString(){

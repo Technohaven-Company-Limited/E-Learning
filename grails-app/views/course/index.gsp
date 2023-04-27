@@ -22,6 +22,7 @@
             <th>Description</th>
             <th>Price</th>
             <th>Discount</th>
+            <th>Logo</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -38,6 +39,7 @@
                 <td>${course.courseDescription}</td>
                 <td>${course.coursePrice}</td>
                 <td>${course.courseDiscount}</td>
+                <td>${course.courseLogo}</td>
                 <td>
                     <g:link class="btn btn-sm btn-primary" style="text-decoration: none" action="edit" params="[id: course.id]">Edit</g:link>
                     <g:link class="btn btn-sm btn-danger ml-5" style="text-decoration: none" action="delete" params="[id: course.id]" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">Delete</g:link>

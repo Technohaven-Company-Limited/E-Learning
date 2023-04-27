@@ -84,7 +84,7 @@
                             <div class="col-1"></div>
                             <div class="col-3"><label>Course Price</label></div>
                             <div class="col-8">
-                                <g:field name="coursePrice" class="form-control" bean="${course}" value="${coursePrice}" type="number"/>
+                                <g:field type="number" name="coursePrice" class="form-control" bean="${course}" value="${coursePrice}"/>
                             </div>
                         </div>
                         <br>
@@ -93,6 +93,14 @@
                             <div class="col-3"><label>Course Discount</label></div>
                             <div class="col-8">
                                 <g:field type="number" class="form-control" name="courseDiscount" bean="${course}" value="${courseDiscount}"/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-3"><label>Course Logo</label></div>
+                            <div class="col-8">
+                                <g:textField class="form-control" name="courseLogo" bean="${course}" value="${courseLogo}"/>
                             </div>
                         </div>
                         <br>

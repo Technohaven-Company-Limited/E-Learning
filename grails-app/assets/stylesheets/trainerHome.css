@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+
+/*  <<<<<<<<<<<< navbar >>>>>>>>>> */
+#logo{
+    float: left;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color:#FF1493;
+}
+
+#src_img{
+    width: 18px;
+    background: #4682B4;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
+.nav-link{
+    font-size: 18px;
+    font-weight: 500;
+}

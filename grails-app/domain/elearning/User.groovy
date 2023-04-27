@@ -6,8 +6,6 @@ class User {
     String email
     String userName
     String passWord
-    static hasMany = [course: Course]
-    static belongsTo = [_course: Course]
 
     static constraints = {
         roleName nullable: false
@@ -15,6 +13,5 @@ class User {
         email email: true, nullable: false, unique: true
         userName nullable: false, unique: true
         passWord password: true, nullable: false
-        _course nullable: true
     }
 }
