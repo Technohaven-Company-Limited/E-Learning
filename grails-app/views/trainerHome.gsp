@@ -47,25 +47,25 @@
 <!--Card-->
 <div class="container p-5 mt-1 border border-1" style="border-radius: 15px; background-color: aliceblue;">
     <div class="row">
-        <g:each controller="course" in="${courses}" var="course">
+        <g:each controller="course" in="${coursess}" var="course">
             <div class="col-3">
                 <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">
-                    <a href=""><g:img class="card-img-top" dir="images" file="Groovy.png" alt="Card image cap" style="height: 150px; border-radius:5px;"/></a>
+                    <a href=""><g:img class="card-img-top" dir="images" file="${course.courseLogo}" alt="Card image cap" style="height: 150px; border-radius:5px;"/></a>
                     <div class="card-body" style="line-height: 0px;">
-                        <p class="d-inline text-light" style="background: #00CED1; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">$150.00</p>
-                        <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>Groovy for Beginners - Learn Programming from scratch</a></h5>
-                        <table class="table" style="font-size: 11px;">
+                        <p class="d-inline text-light" style="background: #00CED1; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">${course.coursePrice}</p>
+                        <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>${course.courseName}</a></h5>
+                        <table style="font-size: 11px;">
                             <tr>
                                 <td>Instructor</td>
                                 <td>${course.courseTrainer}</td>
                             </tr>
                             <tr>
                                 <td>Duration</td>
-                                <td>20 Hours</td>
+                                <td>${course.courseDuration}</td>
                             </tr>
                             <tr>
-                                <td>Lecture</td>
-                                <td>32</td>
+                                <td>Publish</td>
+                                <td>${course.courseUploadDate}</td>
                             </tr>
                         </table>
                         <a href="#" class="btn btn-primary" style="padding-top: 0px; padding-bottom: 0px; font-size: 11px;">Buy now</a>
@@ -73,84 +73,6 @@
                 </div>
             </div>
         </g:each>
-
-%{--        <div class="col-md-3">--}%
-%{--            <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">--}%
-%{--                <a href=""><img class="card-img-top" alt="Card image cap" style="height: 150px; border-radius:5px;"></a>--}%
-%{--                <div class="card-body" style="line-height: 0px;">--}%
-%{--                    <p class="d-inline text-light" style="background: Violet; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">$150.00</p>--}%
-%{--                    <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>The Complete JavaScript Course 2023: From Zero to Expert!</a></h5>--}%
-%{--                    <table class="table" style="font-size: 11px;">--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-user"></i> Instructor</td>--}%
-%{--                            <td>ABC</td>--}%
-%{--                        </tr>--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-clock"></i> Duration</td>--}%
-%{--                            <td>20 Hours</td>--}%
-%{--                        </tr>--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-file"></i> Lecture</td>--}%
-%{--                            <td>32</td>--}%
-%{--                        </tr>--}%
-%{--                    </table>--}%
-%{--                    <a href="#" class="btn btn-primary" style="padding-top: 0px; padding-bottom: 0px; font-size: 11px;">Buy now</a>--}%
-%{--                    <a href="#" class="btn btn-outline-warning" style="margin-left: 20px; padding-top: 0px; padding-bottom: 0px; font-size: 11px;"><i class="fa-solid fa-cart-plus"></i> Add to cart</a>--}%
-%{--                </div>--}%
-%{--            </div>--}%
-%{--        </div>--}%
-
-%{--        <div class="col-md-3">--}%
-%{--            <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">--}%
-%{--                <a href=""><img class="card-img-top" alt="Card image cap" style="height: 150px; border-radius:5px;"></a>--}%
-%{--                <div class="card-body" style="line-height: 0px;">--}%
-%{--                    <p class="d-inline text-light" style="background: Tomato; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">$150.00</p>--}%
-%{--                    <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>React - The Complete Guide (incl Hooks, React Router)</a></h5>--}%
-%{--                    <table class="table" style="font-size: 11px;">--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-user"></i> Instructor</td>--}%
-%{--                            <td>ABC</td>--}%
-%{--                        </tr>--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-clock"></i> Duration</td>--}%
-%{--                            <td>20 Hours</td>--}%
-%{--                        </tr>--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-file"></i> Lecture</td>--}%
-%{--                            <td>32</td>--}%
-%{--                        </tr>--}%
-%{--                    </table>--}%
-%{--                    <a href="#" class="btn btn-primary" style="padding-top: 0px; padding-bottom: 0px; font-size: 11px;">Buy now</a>--}%
-%{--                    <a href="#" class="btn btn-outline-warning" style="margin-left: 20px; padding-top: 0px; padding-bottom: 0px; font-size: 11px;"><i class="fa-solid fa-cart-plus"></i> Add to cart</a>--}%
-%{--                </div>--}%
-%{--            </div>--}%
-%{--        </div>--}%
-
-%{--        <div class="col-md-3">--}%
-%{--            <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">--}%
-%{--                <a href=""><img class="card-img-top" alt="Card image cap" style="height: 150px; border-radius:5px;"></a>--}%
-%{--                <div class="card-body" style="line-height: 0px;">--}%
-%{--                    <p class="d-inline text-light" style="background: MediumSeaGreen; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">$150.00</p>--}%
-%{--                    <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>Photoshop Master Course: From Beginner to Photoshop Pro</a></h5>--}%
-%{--                    <table class="table" style="font-size: 11px;">--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-user"></i> Instructor</td>--}%
-%{--                            <td>ABC</td>--}%
-%{--                        </tr>--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-clock"></i> Duration</td>--}%
-%{--                            <td>20 Hours</td>--}%
-%{--                        </tr>--}%
-%{--                        <tr>--}%
-%{--                            <td><i class="fa-regular fa-file"></i> Lecture</td>--}%
-%{--                            <td>32</td>--}%
-%{--                        </tr>--}%
-%{--                    </table>--}%
-%{--                    <a href="#" class="btn btn-primary" style="padding-top: 0px; padding-bottom: 0px; font-size: 11px;">Buy now</a>--}%
-%{--                    <a href="#" class="btn btn-outline-warning" style="margin-left: 20px; padding-top: 0px; padding-bottom: 0px; font-size: 11px;"><i class="fa-solid fa-cart-plus"></i> Add to cart</a>--}%
-%{--                </div>--}%
-%{--            </div>--}%
-%{--        </div>--}%
     </div>
 </div>
 </body>

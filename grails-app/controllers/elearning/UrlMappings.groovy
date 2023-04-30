@@ -12,7 +12,7 @@ class UrlMappings {
         "/"(view:"/user/loginPage")
         "/login"(view:"/user/loginPage")
         "/register"(view:"/user/register")
-        "/trainerhome"(view:'/trainerHome')
+//        "/trainerhome"(view:'/trainerHome')
         "/lesson"(view:"/lesson/uploadLesson")
         "/course"(view:"/course/uploadCourse")
         "/contactus"(view:"/contactUs/contactPage")

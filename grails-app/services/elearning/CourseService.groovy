@@ -2,6 +2,7 @@ package elearning
 
 import elearning.Course
 import grails.gorm.services.Service
+import groovy.sql.Sql
 
 @Service(Course)
 interface CourseService {

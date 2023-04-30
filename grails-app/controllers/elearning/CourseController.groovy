@@ -10,7 +10,7 @@ class CourseController {
     def index() {
         def course = Course.list()
         [courses: course]
-//        render(view:'trainerHome', model:[courses: course])
+//        render(view:'../trainerHome', model:[courses: course])
     }
 
     def create() {
@@ -54,6 +54,11 @@ class CourseController {
             courseService.save(course)
             redirect(action: "index")
         }
+    }
+
+    def trainerhome(){
+        def course = Course.list()
+        render(view:'../trainerHome', model:[coursess: course])
     }
 
 }
