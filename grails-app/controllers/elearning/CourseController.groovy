@@ -69,7 +69,7 @@ class CourseController {
 
     def report(){
         // Load the report file
-        def reportFile = new File("../../src/main/webapp/myfirstreport.jasper")
+        def reportFile = new File("../../src/main/webapp/myfirstreport.jrxml")
 
         // Compile the report file
         def jasperReport = JasperCompileManager.compileReport(reportFile.path)
