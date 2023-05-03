@@ -26,7 +26,7 @@
                             <div class="col-1"></div>
                             <div class="col-3"><label>Course Code</label></div>
                             <div class="col-8">
-                                <g:select class="form-control" from="${elearning.Course.listOrderByCourseCode()}" name="lessonCourse" bean="${lesson}" value="${lessonCourse}"/>
+                                <g:select class="form-control" from="${elearning.Course.listOrderByCourseCode()}" name="lessonCourse" bean="${lesson}" value="${lesson.lessonCourse}"/>
                             </div>
                         </div>
                         <br>

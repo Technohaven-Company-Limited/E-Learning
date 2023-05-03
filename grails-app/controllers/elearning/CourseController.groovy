@@ -1,5 +1,11 @@
 package elearning
 
+import net.sf.jasperreports.engine.JasperCompileManager
+import net.sf.jasperreports.engine.JasperExportManager
+import net.sf.jasperreports.engine.JasperFillManager
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+
+
 class CourseController {
 
 
@@ -59,6 +65,22 @@ class CourseController {
     def trainerhome(){
         def course = Course.list()
         render(view:'../trainerHome', model:[coursess: course])
+    }
+
+    def report(){
+        // Load the report file
+        def reportFile = new File("../../src/main/webapp/myfirstreport.jasper")
+
+        // Compile the report file
+        def jasperReport = JasperCompileManager.compileReport(reportFile.path)
+
+        // Fill the report with data
+        def params = [:]
+        def dataSource = Course.list() // Get the list of products from the database
+        def jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JRBeanCollectionDataSource(dataSource))
+
+        // Render the report and display it in the browser
+        JasperExportManager.exportReportToPdfStream(jasperPrint, response.outputStream)
     }
 
 }

@@ -26,7 +26,7 @@
                             <div class="col-1"></div>
                             <div class="col-3"><label>Course Category</label></div>
                             <div class="col-8">
-                                <g:select class="form-control" from="['Web Development', 'Web Design', 'Graphics Design', 'Networking', 'Microsoft Office']" noSelection="['':'Choose your category']" name="courseCategory" bean="${course}" value="${courseCategory}"/>
+                                <g:select class="form-control" from="['Web Development', 'Web Design', 'Graphics Design', 'Networking', 'Microsoft Office']" noSelection="['':'Choose your category']" name="courseCategory" bean="${course}" value="${course.courseCategory}"/>
                             </div>
                         </div>
                         <br>
@@ -59,7 +59,7 @@
                             <div class="col-3"><label>Upload Date</label></div>
                             <div class="col-8">
                                 %{--                                <g:datePicker class="form-control" name="courseUploadDate" value="${courseUploadDate}"/>--}%
-                                <input type="date" class="form-control" name="courseUploadDate" bean="${course}" value="${courseUploadDate}">
+                                <input type="date" class="form-control" name="courseUploadDate" bean="${course}" value="${course.courseUploadDate}">
                             </div>
                         </div>
                         <br>
