@@ -1,9 +1,14 @@
 package elearning
 
+import net.sf.jasperreports.engine.JRDataSource
+import net.sf.jasperreports.engine.JREmptyDataSource
 import net.sf.jasperreports.engine.JasperCompileManager
 import net.sf.jasperreports.engine.JasperExportManager
 import net.sf.jasperreports.engine.JasperFillManager
+import net.sf.jasperreports.engine.JasperPrint
+import net.sf.jasperreports.engine.JasperReport
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+import net.sf.jasperreports.engine.util.JRLoader
 
 
 class CourseController {
@@ -67,9 +72,9 @@ class CourseController {
         render(view:'../trainerHome', model:[coursess: course])
     }
 
-    def report(){
+    def report() {
         // Load the report file
-        def reportFile = new File("../../src/main/webapp/myfirstreport.jrxml")
+        def reportFile = new File("/reports/myfirstreport.jrxml")
 
         // Compile the report file
         def jasperReport = JasperCompileManager.compileReport(reportFile.path)
@@ -81,6 +86,14 @@ class CourseController {
 
         // Render the report and display it in the browser
         JasperExportManager.exportReportToPdfStream(jasperPrint, response.outputStream)
+    }
+
+    def report2() {
+        def any = getClass().getResource("/reports/myfirstreport.jrxml").getPath()
+        JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(any)
+        JRDataSource jrDataSource = new JREmptyDataSource()
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, jrDataSource)
+        JasperExportManager.exportReportToPdfFile(jasperPrint, "myfirstreport.pdf")
     }
 
 }

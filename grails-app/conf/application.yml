@@ -112,9 +112,9 @@ dataSource:
 
 environments:
     development:
-        jasper:
-            dir:
-                reports: '../src/main/webapp/myfirstreport'
+#        jasper:
+#            dir:
+#                reports: '../src/main/webapp/myfirstreport'
         dataSource:
             dbCreate: update
             url: jdbc:mysql://localhost/elearning
