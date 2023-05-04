@@ -1,5 +1,6 @@
 package elearning
 
+import groovy.sql.Sql
 import net.sf.jasperreports.engine.JRDataSource
 import net.sf.jasperreports.engine.JREmptyDataSource
 import net.sf.jasperreports.engine.JasperCompileManager
@@ -94,6 +95,15 @@ class CourseController {
         JRDataSource jrDataSource = new JREmptyDataSource()
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, jrDataSource)
         JasperExportManager.exportReportToPdfFile(jasperPrint, "myfirstreport.pdf")
+    }
+
+    def generateReport() {
+        def jasperReport = JasperCompileManager.compileReport("grails-app/reports/MysqlReport.jrxml")
+        def dataSource = new JREmptyDataSource()
+        def params = [:]
+        def jasperPrint = JasperFillManager.fillReport(jasperReport, params, dataSource)
+        response.contentType = 'application/pdf'
+        JasperExportManager.exportReportToPdfStream(jasperPrint, response.outputStream)
     }
 
 }
