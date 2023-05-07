@@ -73,6 +73,11 @@ class CourseController {
         render(view:'../trainerHome', model:[coursess: course])
     }
 
+    List<Course> queryCourseWithId() {
+        def course = Course.findAllById(3)
+        render(view:'../customList', model:[coursesss: course])
+    }
+
     def report() {
         // Load the report file
         def reportFile = new File("/reports/myfirstreport.jrxml")

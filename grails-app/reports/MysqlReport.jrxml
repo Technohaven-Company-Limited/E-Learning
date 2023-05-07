@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MysqlReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="41784e97-6b0a-41e9-ad66-4c88813beb09">
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MysqlReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="41784e97-6b0a-41e9-ad66-4c88813beb09">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mysql Data Adapter"/>
-	<queryString language="SQL">
-		<![CDATA[SELECT * FROM elearning.lesson]]>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select * from elearning.lesson]]>
 	</queryString>
-	<field name="id" class="java.lang.Long">
-		<property name="com.jaspersoft.studio.field.name" value="id"/>
-		<property name="com.jaspersoft.studio.field.label" value="id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
-	</field>
-	<field name="version" class="java.lang.Long">
-		<property name="com.jaspersoft.studio.field.name" value="version"/>
-		<property name="com.jaspersoft.studio.field.label" value="version"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
-	</field>
 	<field name="lesson_duration" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="lesson_duration"/>
 		<property name="com.jaspersoft.studio.field.label" value="lesson_duration"/>
@@ -49,30 +39,6 @@
 	</title>
 	<columnHeader>
 		<band height="30" splitType="Stretch">
-			<staticText>
-				<reportElement x="0" y="0" width="81" height="30" uuid="7767e0c7-38df-42e0-ae84-5761c5ef11f5">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84ed2a99-b944-4c81-b7ea-ee502b48623c"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Id]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="81" y="0" width="79" height="30" uuid="05e7eb54-e145-41a3-b2ed-5dec6e9fd263">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="970df88d-a108-48cd-8fa4-11e14097f07e"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Version]]></text>
-			</staticText>
 			<staticText>
 				<reportElement x="160" y="0" width="79" height="30" uuid="576db029-7fc1-4656-bd9b-3fbb532e6881">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70e8abc1-3466-4cc2-aa28-8217399f3264"/>
@@ -137,26 +103,6 @@
 	</columnHeader>
 	<detail>
 		<band height="31" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="0" width="81" height="30" uuid="2e97d8a4-8120-42bc-9b12-260b9e29118b">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84ed2a99-b944-4c81-b7ea-ee502b48623c"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="81" y="0" width="79" height="30" uuid="f2437235-f072-4025-ab1b-0e40cb36b84e">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="970df88d-a108-48cd-8fa4-11e14097f07e"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{version}]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement x="160" y="0" width="79" height="30" uuid="2beb9585-54c3-4976-b430-2a4b9e5cb0cd">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70e8abc1-3466-4cc2-aa28-8217399f3264"/>

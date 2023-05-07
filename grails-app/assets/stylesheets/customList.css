@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+
+/*  <<<<<<<<<<<< navbar >>>>>>>>>> */
+#logo{
+    float: left;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color:#FF1493;
+}
+
+#src_img{
+    width: 18px;
+    background: #4682B4;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
+.nav-link{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* <<<<Grow>>>> */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+/* <<<<Icon Forward>>>> */
+.hvr-icon-forward {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+}
+.hvr-icon-forward .hvr-icon {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-icon-forward:hover .hvr-icon, .hvr-icon-forward:focus .hvr-icon, .hvr-icon-forward:active .hvr-icon {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+}

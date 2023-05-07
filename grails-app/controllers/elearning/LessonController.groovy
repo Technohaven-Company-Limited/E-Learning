@@ -1,9 +1,20 @@
 package elearning
 
+import grails.gorm.transactions.Transactional
+import net.sf.jasperreports.engine.JREmptyDataSource
+import net.sf.jasperreports.engine.JasperCompileManager
+import net.sf.jasperreports.engine.JasperExportManager
+import net.sf.jasperreports.engine.JasperFillManager
+
+import java.sql.Connection
+import java.sql.PreparedStatement
+import java.sql.ResultSet
+
+@Transactional
 class LessonController {
 
     static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
-
+    def dataSource
      LessonService lessonService
 
     def index() {
@@ -48,6 +59,20 @@ class LessonController {
             lessonService.save(lesson)
             redirect(action: "index")
         }
+    }
+
+    def generateReport() {
+        def jasperReport = JasperCompileManager.compileReport("grails-app/reports/MysqlReport.jrxml")
+//        def dataSource = new JREmptyDataSource()
+        String sql = "SELECT * FROM lesson WHERE id = 2"
+        def con = dataSource.getConnection()
+        PreparedStatement pst = con.prepareStatement(sql)
+        ResultSet rs = pst.executeQuery()
+
+        def params = [:]
+        def jasperPrint = JasperFillManager.fillReport(jasperReport, params, con)
+        response.contentType = 'application/pdf'
+        JasperExportManager.exportReportToPdfStream(jasperPrint, response.outputStream)
     }
 
 }
