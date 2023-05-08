@@ -12,7 +12,7 @@ class AuthenticationController {
     }
 
     def doLogin() {
-        if (authenticationService.doLogin(params.username, params.password)) {
+        if (authenticationService.doLogin(params.userName, params.passWord)) {
             redirect(controller: "dashboard", action: "index")
         } else {
             flash.message = AppUtil.infoMessage("Username or Password not Valid.", false)
@@ -31,14 +31,21 @@ class AuthenticationController {
     }
 
 
-    def doRegistration() {
-        def response = userService.save(params)
-        if (response.isSuccess) {
-            authenticationService.setUserAuthorization(response.model)
-            redirect(controller: "dashboard", action: "index")
+    def doRegistration(User user) {
+//        def response = userService.save(user)
+//        if (response.isSuccess) {
+//            authenticationService.setUserAuthorization(response.model)
+//            redirect(controller: "dashboard", action: "index")
+//        } else {
+//            flash.redirectParams = response.model
+//            redirect(controller: "authentication", action: "registration")
+//        }
+        if (user.hasErrors()) {
+            render(view: "../authentication/registration", model: [users: user])
         } else {
-            flash.redirectParams = response.model
-            redirect(controller: "authentication", action: "registration")
+            userService.save(user)
+//            render(view: "loginPage")
+            redirect(action: "login")
         }
     }
 }

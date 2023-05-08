@@ -9,6 +9,7 @@ class AppInitializationService {
     private static admin() {
         if (User.count() == 0) {
             User user = new User()
+            user.roleName = "ADMINISTRATOR"
             user.fullName = "System Admin"
             user.email = "admin@gmail.com"
             user.userName = "administrator"

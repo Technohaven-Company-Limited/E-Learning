@@ -23,7 +23,7 @@
 %{--                                          from="${Company.list()}"--}%
 %{--                                          value="${user?.company.id}"--}%
 %{--                                          optionKey="id" />--}%
-                                <g:select class="form-control" from="['Learner', 'Trainer']" noSelection="['':'Choose your role']" name="roleName" value="${roleName}"/>
+                                <g:select class="form-control" from="['USER', 'TRAINER', 'ADMINISTRATOR']" noSelection="['':'Choose your role']" name="roleName" value="${roleName}"/>
                             </div>
                         </div>
                         <br>
@@ -60,7 +60,7 @@
                         </div>
                         <br>
                         <div id="btn_div">
-                            <g:submitButton class="btn btn-outline-primary" name="save" value="Submit"/>
+                            <g:submitButton class="btn btn-outline-primary" name="registration" value="Submit"/>
                             <button class="btn btn-outline-danger ml-3">Reset</button>
                         </div>
                     </g:form>

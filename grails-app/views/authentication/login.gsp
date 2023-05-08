@@ -27,16 +27,16 @@
                             <div class="col-6">
                                 <h1>User Login</h1>
                                 <br>
-                                <g:form controller="authentication" action="login">
+                                <g:form controller="authentication" action="doLogin" method="GET">
                                     <div class="row">
                                         <div class="col-12">
-                                            <g:textField class="form-control" name="userName" placeholder="Username"/>
+                                            <g:textField class="form-control" name="userName" placeholder="Username" required="required"/>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row">
                                         <div class="col-12">
-                                            <g:passwordField class="form-control" name="passWord" placeholder="Password"/>
+                                            <g:passwordField class="form-control" name="passWord" placeholder="Password" required="required"/>
                                         </div>
                                     </div>
                                     <br>

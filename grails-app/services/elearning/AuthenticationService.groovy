@@ -9,9 +9,9 @@ class AuthenticationService {
         AppUtil.getAppSession()[AUTHORIZED] = authorization
     }
 
-    def doLogin(String username, String password){
-        password = password.encodeAsMD5()
-        User user = User.findByUsernameAndPassword(username, password)
+    def doLogin(String userName, String passWord){
+//        passWord = passWord.encodeAsMD5()
+        User user = User.findByUserNameAndPassWord(userName, passWord)
         if (user){
             setUserAuthorization(user)
             return true
