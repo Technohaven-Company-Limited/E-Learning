@@ -26,7 +26,7 @@
                                 <div class="col-1"></div>
                                 <div class="col-3"><label>Your Role</label></div>
                                 <div class="col-8">
-                                    <g:select class="form-control" from="['Learner', 'Trainer']" noSelection="['':'Choose your role']" name="roleName" bean="${user}" value="${roleName}"/>
+                                    <g:select class="form-control" from="['Learner', 'Trainer']" noSelection="['':'Choose your role']" name="roleName" bean="${user}" value="${user.roleName}"/>
                                 </div>
                             </div>
                             <br>

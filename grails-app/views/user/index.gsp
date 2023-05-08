@@ -31,7 +31,7 @@
                     <td>
                         <g:link class="btn btn-sm btn-primary" style="text-decoration: none" action="edit" params="[id: user.id]">Edit</g:link>
                         <g:link class="btn btn-sm btn-danger ml-3" style="text-decoration: none" action="delete" params="[id: user.id]" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">Delete</g:link>
-                        <g:link class="btn btn-sm btn-success ml-3" style="text-decoration: none" action="delete" params="[id: user.id]">List</g:link>
+                        <g:link class="btn btn-sm btn-success ml-3" style="text-decoration: none" controller="course" action="queryCourseWithName" params="[trainer: user.fullName]">List</g:link>
 %{--                        <g:form controller="user" action="delete" params="[id: user.id]">--}%
 %{--                            <button class="btn btn-sm btn-block btn-danger">Delete</button>--}%
 %{--                        </g:form>--}%

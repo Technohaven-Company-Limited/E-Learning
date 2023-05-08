@@ -14,7 +14,7 @@
             <div class="card mt-5">
                 <div class="card-header bg-info"><h3 id="header">Registration</h3></div>
                 <div class="card-body">
-                    <g:form controller="user" action="save" method="POST">
+                    <g:form controller="authentication" action="doRegistration" method="POST">
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-3"><label>Your Role</label></div>
@@ -69,7 +69,7 @@
                     <div class="row">
                         <div class="col-4"></div>
                         <div class="col-8">
-                            <a id="account" href="/login">Already have an account</a>
+                            <g:link style="text-decoration: none" id="account" controller="authentication" action="login">Already have an account?</g:link>
                         </div>
                     </div>
                 </div>

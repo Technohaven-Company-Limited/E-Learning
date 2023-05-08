@@ -9,13 +9,12 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/user/loginPage")
-        "/login"(view:"/user/loginPage")
-        "/register"(view:"/user/register")
-//        "/trainerhome"(view:'/trainerHome')
-        "/lesson"(view:"/lesson/uploadLesson")
-        "/course"(view:"/course/uploadCourse")
-        "/contactus"(view:"/contactUs/contactPage")
+        "/"(controller: "dashboard", action: "index")
+//        "/login"(controller: "authentication", action: "login")
+//        "/register"(controller: "authentication", action: "registration")
+//        "/lesson"(view:"/lesson/uploadLesson")
+//        "/course"(view:"/course/uploadCourse")
+//        "/contactus"(view:"/contactUs/contactPage")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }

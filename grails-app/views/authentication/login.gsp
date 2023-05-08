@@ -27,27 +27,27 @@
                             <div class="col-6">
                                 <h1>User Login</h1>
                                 <br>
-                                <form>
+                                <g:form controller="authentication" action="login">
                                     <div class="row">
                                         <div class="col-12">
-                                            <g:textField class="form-control" name="username" placeholder="Username"/>
+                                            <g:textField class="form-control" name="userName" placeholder="Username"/>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row">
                                         <div class="col-12">
-                                            <g:passwordField class="form-control" name="password" placeholder="Password"/>
+                                            <g:passwordField class="form-control" name="passWord" placeholder="Password"/>
                                         </div>
                                     </div>
                                     <br>
                                     <div style="display: flex; justify-content: center;">
-                                        <button class="btn btn-success">Login</button>
+                                        <g:submitButton class="btn btn-success" name="login" value="Login"/>
                                     </div>
-                                </form>
+                                </g:form>
                                 <br>
                                 <br>
                                 <div>
-                                    <p>Do not have any account? <a href="/register">Register here</a></p>
+                                    <p>Do not have any account? <g:link controller="authentication" action="registration">Register here</g:link></p>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,5 @@
 package elearning
 
-import static org.springframework.http.HttpStatus.NO_CONTENT
-
 class UserController {
 
     static  allowedMethods = [get: "GET", list: "GET", save: "POST", update: "PUT"]

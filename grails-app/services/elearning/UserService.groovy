@@ -12,7 +12,6 @@ interface UserService {
     Long count()
 
     void delete(Serializable id)
-//    void delete(User user)
 
     User save(User user)
 }
