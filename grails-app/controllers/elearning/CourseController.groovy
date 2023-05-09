@@ -24,7 +24,7 @@ class CourseController {
     }
 
     def create() {
-        [course: new Course()]
+        render(view: "uploadCourse")
     }
 
     def get(Long id){

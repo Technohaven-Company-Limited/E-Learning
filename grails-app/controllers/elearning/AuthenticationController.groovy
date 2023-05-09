@@ -2,8 +2,9 @@ package elearning
 
 class AuthenticationController {
 
+    static  allowedMethods = [get: "GET", list: "GET", save: "POST", update: "PUT"]
+
     AuthenticationService authenticationService
-    UserService userService
 
     def login() {
         if (authenticationService.isAuthenticated()) {
@@ -31,21 +32,31 @@ class AuthenticationController {
     }
 
 
-    def doRegistration(User user) {
+//    def doRegistration(User user) {
 //        def response = userService.save(user)
 //        if (response.isSuccess) {
 //            authenticationService.setUserAuthorization(response.model)
-//            redirect(controller: "dashboard", action: "index")
+//            redirect(controller: "authentication", action: "login")
 //        } else {
 //            flash.redirectParams = response.model
 //            redirect(controller: "authentication", action: "registration")
 //        }
-        if (user.hasErrors()) {
-            render(view: "../authentication/registration", model: [users: user])
+//        if (user.hasErrors()) {
+//            render(view: "../authentication/registration", model: [users: user])
+//        } else {
+//            userService.save(user)
+////            render(view: "loginPage")
+//            redirect(action: "login")
+//        }
+//    }
+    def doRegistration() {
+        def response = authenticationService.save(params)
+        if (response.isSuccess) {
+            authenticationService.setUserAuthorization(response.model)
+            redirect(controller: "authentication", action: "login")
         } else {
-            userService.save(user)
-//            render(view: "loginPage")
-            redirect(action: "login")
+            flash.redirectParams = response.model
+            redirect(controller: "authentication", action: "registration")
         }
     }
 }

@@ -23,7 +23,7 @@ class LessonController {
     }
 
     def create() {
-        [lesson: new Lesson()]
+        render(view: "uploadLesson")
     }
 
     def get(Long id){

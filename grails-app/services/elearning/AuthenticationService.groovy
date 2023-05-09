@@ -1,5 +1,7 @@
 package elearning
 
+import grails.web.servlet.mvc.GrailsParameterMap
+
 class AuthenticationService {
 
     private static final String AUTHORIZED = "AUTHORIZED"
@@ -13,6 +15,7 @@ class AuthenticationService {
 //        passWord = passWord.encodeAsMD5()
         User user = User.findByUserNameAndPassWord(userName, passWord)
         if (user){
+
             setUserAuthorization(user)
             return true
         }
@@ -45,5 +48,33 @@ class AuthenticationService {
             return true
         }
         return false
+    }
+
+    def isTrainerUser(){
+        def user = getUser()
+        if (user && user.roleName == GlobalConfig.ROLE_NAME.TRAINER){
+            return true
+        }
+        return false
+    }
+
+    def isLearnerUser(){
+        def user = getUser()
+        if (user && user.roleName == GlobalConfig.ROLE_NAME.USER){
+            return true
+        }
+        return false
+    }
+
+    def save(GrailsParameterMap params) {
+        User user = new User(params)
+        def response = AppUtil.saveResponse(true, user)
+        if (user.validate()) {
+            user.save(flush: true)
+            if (!user.hasErrors()){
+                response.isSuccess = true
+            }
+        }
+        return response
     }
 }

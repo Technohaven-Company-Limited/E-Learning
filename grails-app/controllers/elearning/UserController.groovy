@@ -16,9 +16,12 @@ class UserController {
         [user: new User()]
     }
 
-    def get(Long id){
-        userService.get(id)
+    def get(){
+//        userService.get(id)
+        def auth = AppUtil.getAppSession()["AUTHORIZED"]
+        render(view:'profile', model:[profile: auth.user])
     }
+
     def list(User user){
         userService.list(user)
     }
@@ -30,10 +33,6 @@ class UserController {
 //        user.delete()
 //        redirect(action: "index")
     }
-//    def delete(User user) {
-//        user.delete()
-//        redirect(action: "index")
-//    }
 
     def save(User user){
         if (user.hasErrors()) {
@@ -45,8 +44,10 @@ class UserController {
         }
     }
 
-    def edit(User user) {
-        [user: user]
+    def edit() {
+//        [user: user]
+        def auth = AppUtil.getAppSession()["AUTHORIZED"]
+        render(view:'/user/edit', model:[edit: auth.user])
     }
 
     def update(User user) {
@@ -57,4 +58,9 @@ class UserController {
             redirect(action: "index")
         }
     }
+
+//    def getById(Long id) {
+//        def user = User.findById(id)
+//        render(view:'profile', model:[userss: user])
+//    }
 }

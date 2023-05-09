@@ -13,6 +13,10 @@ class ContactUsController {
         [contactus: contactUs]
     }
 
+    def create() {
+        render(view: "contactPage")
+    }
+
 
 //    def get(Long id){
 //        respond contactUsService.get(id)
@@ -28,7 +32,7 @@ class ContactUsController {
         } else {
             contactUsService.save(contactUs)
 //            render(view: "loginPage")
-            redirect(action: "index")
+//            redirect(action: "index")
 
         }
     }
