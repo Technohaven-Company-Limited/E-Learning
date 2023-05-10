@@ -1,18 +1,6 @@
 package elearning
 
-import net.sf.jasperreports.engine.JRDataSource
-import net.sf.jasperreports.engine.JREmptyDataSource
-import net.sf.jasperreports.engine.JasperCompileManager
-import net.sf.jasperreports.engine.JasperExportManager
-import net.sf.jasperreports.engine.JasperFillManager
-import net.sf.jasperreports.engine.JasperPrint
-import net.sf.jasperreports.engine.JasperReport
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
-import net.sf.jasperreports.engine.util.JRLoader
-
-
 class CourseController {
-
 
     static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
 

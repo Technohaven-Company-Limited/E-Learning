@@ -62,17 +62,17 @@
 
         <div class="col-5" style=" padding-top: 10px;">
             <nav class="nav">
-                <a class="nav-link text-light active" aria-current="page" href="/home">Home</a>
-                <a class="nav-link text-light" href="/lesson">Upload Lesson</a>
-                <a class="nav-link text-light" href="/course">Upload Courses</a>
-                <a class="nav-link text-light" href="/contactus">Contact Us</a>
+                <g:link class="nav-link text-light active" aria-current="page" href="/dashboard/index">Home</g:link>
+                <g:link class="nav-link text-light" controller="lesson" action="create">Lessons</g:link>
+                <g:link class="nav-link text-light" controller="course" action="create">Courses</g:link>
+                <g:link class="nav-link text-light" controller="contactUs" action="create">Contact Us</g:link>
             </nav>
         </div>
 
         <div class="col-4">
             <nav class="nav d-flex flex-row-reverse">
-                <button class="nav-link text-danger" style="padding-top: 14px; background: transparent; border: none;">Logout</button>
-                <a class="nav-link text-light" style="padding-top: 14px;" href="">Profile</a>
+                <g:link class="nav-link text-danger" style="padding-top: 14px; background: transparent; border: none;" controller="authentication" action="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</g:link>
+                <g:link class="nav-link text-light" style="padding-top: 14px;" controller="user" action="get"><i class="fa-solid fa-user"></i> Profile</g:link>
             </nav>
         </div>
     </div>

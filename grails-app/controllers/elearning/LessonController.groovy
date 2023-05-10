@@ -6,7 +6,6 @@ import net.sf.jasperreports.engine.JasperCompileManager
 import net.sf.jasperreports.engine.JasperExportManager
 import net.sf.jasperreports.engine.JasperFillManager
 
-import java.sql.Connection
 import java.sql.PreparedStatement
 import java.sql.ResultSet
 
@@ -64,10 +63,10 @@ class LessonController {
     def generateReport() {
         def jasperReport = JasperCompileManager.compileReport("grails-app/reports/MysqlReport.jrxml")
 //        def dataSource = new JREmptyDataSource()
-        String sql = "SELECT * FROM lesson WHERE id = 2"
+//        String sql = "SELECT * FROM lesson WHERE id = 2"
         def con = dataSource.getConnection()
-        PreparedStatement pst = con.prepareStatement(sql)
-        ResultSet rs = pst.executeQuery()
+//        PreparedStatement pst = con.prepareStatement(sql)
+//        ResultSet rs = pst.executeQuery()
 
         def params = [:]
         def jasperPrint = JasperFillManager.fillReport(jasperReport, params, con)

@@ -29,9 +29,6 @@ class UserController {
     def delete(Long id){
         userService.delete(id)
         redirect action: "index"
-//        def user = User.get(id)
-//        user.delete()
-//        redirect(action: "index")
     }
 
     def save(User user){
@@ -39,7 +36,6 @@ class UserController {
             render(view: "register", model: [users: user])
         } else {
             userService.save(user)
-//            render(view: "loginPage")
             redirect(action: "index")
         }
     }
@@ -55,12 +51,7 @@ class UserController {
             render(view: "edit", model: [user: user])
         } else {
             userService.save(user)
-            redirect(action: "index")
+            redirect(action: "get")
         }
     }
-
-//    def getById(Long id) {
-//        def user = User.findById(id)
-//        render(view:'profile', model:[userss: user])
-//    }
 }
