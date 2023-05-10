@@ -13,8 +13,9 @@ import java.sql.ResultSet
 class LessonController {
 
     static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
+
     def dataSource
-     LessonService lessonService
+    LessonService lessonService
 
     def index() {
         def lesson = Lesson.list()
@@ -42,7 +43,6 @@ class LessonController {
             render(view: "uploadLesson", model: [users: lesson])
         } else {
             lessonService.save(lesson)
-//            render(view: "loginPage")
             redirect(action: "index")
         }
     }

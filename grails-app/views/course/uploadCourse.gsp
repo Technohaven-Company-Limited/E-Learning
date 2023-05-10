@@ -93,7 +93,11 @@
                             <div class="col-1"></div>
                             <div class="col-3"><label>Course Logo</label></div>
                             <div class="col-8">
-                                <g:textField class="form-control" name="courseLogo" value="${courseLogo}"/>
+%{--                                <g:textField class="form-control" name="courseLogo" value="${courseLogo}"/>--}%
+                                <g:field name="courseLogo" class="form-control" type="file" value="${courseLogo}" placeholder="Please Upload Image"/>
+                                <g:if test="${course?.courseLogo}">
+                                    <img src="${resource(dir: "course-courseLogo", file: "/${course.id}-${course.courseLogo}")}" class="img-thumbnail" style="margin-top: 10px; height: 100px; width: 100px;"/>
+                                </g:if>
                             </div>
                         </div>
                         <br>

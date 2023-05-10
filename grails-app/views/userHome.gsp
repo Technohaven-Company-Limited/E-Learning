@@ -20,7 +20,7 @@
         <div class="col-5" style=" padding-top: 10px;">
             <nav class="nav">
                 <g:link class="nav-link text-light active" aria-current="page" href="/dashboard/index">Home</g:link>
-                <g:link class="nav-link text-light" controller="lesson" action="create">Lessons</g:link>
+%{--                <g:link class="nav-link text-light" controller="lesson" action="create">Lessons</g:link>--}%
                 <g:link class="nav-link text-light" controller="course" action="create">Courses</g:link>
                 <g:link class="nav-link text-light" controller="contactUs" action="create">Contact Us</g:link>
             </nav>
@@ -48,7 +48,7 @@
 <div class="container p-5 mt-1 border border-1" style="border-radius: 15px; background-color: aliceblue;">
     <div class="row">
         <g:each controller="course" in="${coursess}" var="course">
-            <div class="col-3">
+            <div class="col-3 mb-5">
                 <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">
                     <a href=""><g:img class="card-img-top" dir="images" file="${course.courseLogo}" alt="Card image cap" style="height: 150px; border-radius:5px;"/></a>
                     <div class="card-body" style="line-height: 0px;">

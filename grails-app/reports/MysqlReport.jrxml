@@ -4,7 +4,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mysql Data Adapter"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<queryString>
-		<![CDATA[select * from elearning.lesson]]>
+		<![CDATA[select * from elearning.lesson where id = 2]]>
 	</queryString>
 	<field name="lesson_duration" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="lesson_duration"/>

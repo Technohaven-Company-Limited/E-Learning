@@ -4,11 +4,13 @@
 <head>
     <meta name="layout" content="main"/>
     <title>CONTACT HERE</title>
-%{--    <link rel="stylesheet" href="${resource(dir: 'css', file: 'register.css')}" type="text/css">--}%
     <style>
         #btn_div{
             display: flex;
             justify-content: center;
+        }
+        .card{
+            border-radius: 10px;
         }
     </style>
 </head>

@@ -14,9 +14,23 @@ class AuthenticationController {
 
     def doLogin() {
         if (authenticationService.doLogin(params.userName, params.passWord)) {
-            redirect(controller: "dashboard", action: "index")
+            def auth = AppUtil.getAppSession()["AUTHORIZED"]
+            def users = auth.user
+            if (users.roleName == "USER"){
+                redirect(controller: "course", action: "userhome")
+                return true
+            }
+            if (users.roleName == "TRAINER"){
+                redirect(controller: "dashboard", action: "index")
+                return true
+            }
+            if (users.roleName == "ADMINISTRATOR"){
+                redirect(controller: "dashboard", action: "index")
+                return true
+            }
         } else {
-            flash.message = AppUtil.infoMessage("Username or Password not Valid.", false)
+//            flash.message = AppUtil.infoMessage("Username or Password not Valid.", false)
+            flash.message = "Username or Password not Valid!"
             redirect(controller: "authentication", action: "login")
         }
     }

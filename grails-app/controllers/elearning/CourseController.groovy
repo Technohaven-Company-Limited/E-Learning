@@ -1,5 +1,7 @@
 package elearning
 
+import javax.servlet.http.HttpServletRequest
+
 class CourseController {
 
     static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
@@ -54,14 +56,24 @@ class CourseController {
         }
     }
 
-    def trainerhome(){
+    def userhome(){
         def course = Course.list()
-        render(view:'../trainerHome', model:[coursess: course])
+        render(view:'../userHome', model:[coursess: course])
     }
 
     List<Course> queryCourseWithName(String trainer) {
         def course = Course.findAllByCourseTrainer(trainer)
         render(view:'../customList', model:[coursesss: course])
+    }
+
+    def uploadImage(Course course, HttpServletRequest request){
+        if (request.getFile("courseLogo") && !request.getFile("courseLogo").filename.equals("")){
+            String image = FileUtil.uploadCourseImage(course.id, request.getFile("courseLogo"))
+            if (!image.equals("")){
+                course.courseLogo = image
+                course.save(flush:true)
+            }
+        }
     }
 
 }

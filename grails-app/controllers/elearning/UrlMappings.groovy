@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/"(controller: "dashboard", action: "index")
+//        "/"(controller: "dashboard", action: "index")
 //        "/login"(controller: "authentication", action: "login")
 //        "/register"(controller: "authentication", action: "registration")
 //        "/lesson"(view:"/lesson/uploadLesson")

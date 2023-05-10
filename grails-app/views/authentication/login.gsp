@@ -13,6 +13,9 @@
 </head>
 
 <body>
+<div style="display: flex; justify-content: center;">
+    <p style="color: #b21f2d">${flash.message}</p>
+</div>
     <div class="container">
         <div class="row">
             <div class="col-2"></div>
@@ -30,13 +33,13 @@
                                 <g:form controller="authentication" action="doLogin" method="GET">
                                     <div class="row">
                                         <div class="col-12">
-                                            <g:textField class="form-control" name="userName" placeholder="Username" required="required"/>
+                                            <g:textField class="form-control" name="userName" placeholder="Username"/>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row">
                                         <div class="col-12">
-                                            <g:passwordField class="form-control" name="passWord" placeholder="Password" required="required"/>
+                                            <g:passwordField class="form-control" name="passWord" placeholder="Password"/>
                                         </div>
                                     </div>
                                     <br>
