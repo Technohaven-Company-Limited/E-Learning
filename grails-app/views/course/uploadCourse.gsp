@@ -14,7 +14,7 @@
             <div class="card mt-5">
                 <div class="card-header bg-info"><h3 class="text-light">Upload Course</h3></div>
                 <div class="card-body">
-                    <g:form controller="course" action="save" method="POST">
+                    <g:form controller="course" action="save" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-3"><label>Course Category</label></div>
@@ -94,10 +94,7 @@
                             <div class="col-3"><label>Course Logo</label></div>
                             <div class="col-8">
 %{--                                <g:textField class="form-control" name="courseLogo" value="${courseLogo}"/>--}%
-                                <g:field name="courseLogo" class="form-control" type="file" value="${courseLogo}" placeholder="Please Upload Image"/>
-                                <g:if test="${course?.courseLogo}">
-                                    <img src="${resource(dir: "course-courseLogo", file: "/${course.id}-${course.courseLogo}")}" class="img-thumbnail" style="margin-top: 10px; height: 100px; width: 100px;"/>
-                                </g:if>
+                                <g:field name="courseLogoFile" value="${courseLogo}" class="form-control" type="file" placeholder="Please Upload Image"/>
                             </div>
                         </div>
                         <br>

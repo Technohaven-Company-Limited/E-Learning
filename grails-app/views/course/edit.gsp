@@ -14,7 +14,7 @@
             <div class="card mt-5">
                 <div class="card-header bg-info"><h3 class="text-light">Upload Course</h3></div>
                 <div class="card-body">
-                    <g:form controller="course" action="update" method="PUT">
+                    <g:form controller="course" action="update" enctype="multipart/form-data" method="PUT">
                         <div class="row">
                             <div class="col-4"></div>
                             <div class="col-8">
@@ -100,7 +100,8 @@
                             <div class="col-1"></div>
                             <div class="col-3"><label>Course Logo</label></div>
                             <div class="col-8">
-                                <g:textField class="form-control" name="courseLogo" bean="${course}" value="${courseLogo}"/>
+%{--                                <g:textField class="form-control" name="courseLogo" bean="${course}" value="${courseLogo}"/>--}%
+                                <g:field class="form-control" type="file" name="courseLogoFile" value="${courseLogo}"/>
                             </div>
                         </div>
                         <br>

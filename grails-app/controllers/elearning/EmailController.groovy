@@ -4,7 +4,7 @@ class EmailController {
 
     EmailService emailService
 
-    static  allowedMethods = [get: "GET", delete: "DELETE" , save: "POST"]
+    static  allowedMethods = [get: "GET", save: "POST"]
 
 
 

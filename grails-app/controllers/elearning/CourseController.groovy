@@ -1,10 +1,11 @@
 package elearning
 
 import javax.servlet.http.HttpServletRequest
+import org.springframework.web.multipart.MultipartFile
 
 class CourseController {
 
-    static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
+    static  allowedMethods = [get: "GET", list: "GET", save: "POST", update: "PUT"]
 
     CourseService courseService
 
@@ -25,21 +26,45 @@ class CourseController {
         courseService.list(course)
     }
 
-    def show() {
-        [course: Course.get(params.id)]
+    def show(Long id) {
+        def course = Course.get(id)
+        render(view:'courseDetails', model:[show: course])
     }
 
     def delete(Long id){
         courseService.delete(id)
-        redirect action: "index"
+        redirect(action: "index")
     }
 
     def save(Course course){
         if (course.hasErrors()) {
             render(view: "uploadCourse", model: [courses: course])
         } else {
-            courseService.save(course)
-            redirect(action: "index")
+            try {
+                def uploadedFile = request.getPart('courseLogoFile')
+
+                if (uploadedFile && uploadedFile.getSize() > 0) {
+                    // Specify the directory where you want to save the uploaded file
+                    String uploadDir = "D:\\Mohaiminul\\Github\\E-Learning\\grails-app\\assets\\images\\"
+                    // Create the upload directory if it doesn't exist
+                    new File(uploadDir).mkdirs()
+                    // Get the original filename
+                    String originalFilename = uploadedFile.getSubmittedFileName()
+                    // Save the uploaded file to the upload directory
+                    uploadedFile.write(uploadDir + originalFilename)
+                    course.setCourseLogo(originalFilename);
+
+                    flash.message = "File uploaded successfully!"
+                } else {
+                    flash.error = "No file selected."
+                }
+
+                courseService.save(course)
+                redirect(action: "index")
+            }catch(Exception e){
+                e.printStackTrace()
+            }
+
         }
     }
 
@@ -51,8 +76,30 @@ class CourseController {
         if (course.hasErrors()) {
             render(view: "edit", model: [course: course])
         } else {
-            courseService.save(course)
-            redirect(action: "index")
+            try {
+                def uploadedFile = request.getPart('courseLogoFile')
+
+                if (uploadedFile && uploadedFile.getSize() > 0) {
+                    // Specify the directory where you want to save the uploaded file
+                    String uploadDir = "D:\\Mohaiminul\\Github\\E-Learning\\grails-app\\assets\\images\\"
+                    // Create the upload directory if it doesn't exist
+                    new File(uploadDir).mkdirs()
+                    // Get the original filename
+                    String originalFilename = uploadedFile.getSubmittedFileName()
+                    // Save the uploaded file to the upload directory
+                    uploadedFile.write(uploadDir + originalFilename)
+                    course.setCourseLogo(originalFilename);
+
+                    flash.message = "File uploaded successfully!"
+                } else {
+                    flash.error = "No file selected."
+                }
+
+                courseService.save(course)
+                redirect(action: "index")
+            }catch(Exception e){
+                e.printStackTrace()
+            }
         }
     }
 
@@ -66,14 +113,9 @@ class CourseController {
         render(view:'../customList', model:[coursesss: course])
     }
 
-    def uploadImage(Course course, HttpServletRequest request){
-        if (request.getFile("courseLogo") && !request.getFile("courseLogo").filename.equals("")){
-            String image = FileUtil.uploadCourseImage(course.id, request.getFile("courseLogo"))
-            if (!image.equals("")){
-                course.courseLogo = image
-                course.save(flush:true)
-            }
-        }
+    def lessonList(String code){
+        def lesson = Lesson.findAllByLessonCourse(code)
+        render(view:'lessonList', model:[lessons: lesson])
     }
 
 }

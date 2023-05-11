@@ -8,6 +8,7 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+
 info:
     app:
         name: '@info.app.name@'
@@ -97,6 +98,11 @@ grails:
                 taglib: none
                 staticparts: none
 
+    servlet:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+
 ---
 hibernate:
     cache:
@@ -112,9 +118,6 @@ dataSource:
 
 environments:
     development:
-#        jasper:
-#            dir:
-#                reports: '../src/main/webapp/myfirstreport'
         dataSource:
             dbCreate: update
             url: jdbc:mysql://localhost/elearning

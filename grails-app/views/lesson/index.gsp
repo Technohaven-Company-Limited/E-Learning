@@ -18,6 +18,7 @@
             <th>Lesson Name</th>
             <th>Lesson Duration</th>
             <th>Lesson Description</th>
+            <th>Lesson File</th>
             <th style="width: 100px">Action</th>
         </tr>
         </thead>
@@ -30,6 +31,7 @@
                 <td>${lesson.lessonName}</td>
                 <td>${lesson.lessonDuration}</td>
                 <td>${lesson.lessonDescription}</td>
+                <td>${lesson.lessonFile}</td>
                 <td>
                     <div class="btn-group">
                         <g:link class="btn btn-sm btn-primary" style="text-decoration: none" action="edit" params="[id: lesson.id]"><i class="fa-solid fa-pen-to-square" title="Edit"></i></g:link>

@@ -14,7 +14,7 @@
             <div class="card mt-5">
                 <div class="card-header bg-info"><h3 class="text-light">Upload Lesson</h3></div>
                 <div class="card-body">
-                    <g:form controller="lesson" action="save" method="POST">
+                    <g:form controller="lesson" action="save" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-3"><label>Course Code</label></div>
@@ -52,6 +52,14 @@
                             <div class="col-3"><label>Lesson Description</label></div>
                             <div class="col-8">
                                 <g:textArea class="form-control" name="lessonDescription" value="${lessonDescription}"/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-3"><label>Lesson File</label></div>
+                            <div class="col-8">
+                                <g:field type="file" class="form-control" name="lessonFileUpload" value="${lessonFile}"/>
                             </div>
                         </div>
                         <br>

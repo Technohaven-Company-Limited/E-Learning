@@ -50,7 +50,7 @@
         <g:each controller="course" in="${coursess}" var="course">
             <div class="col-3 mb-5">
                 <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">
-                    <a href=""><g:img class="card-img-top" dir="images" file="${course.courseLogo}" alt="Card image cap" style="height: 150px; border-radius:5px;"/></a>
+                    <g:link controller="course" action="show" params="[id: course.id]"><g:img class="card-img-top" dir="images" file="${course.courseLogo}" alt="Card image cap" style="height: 150px; border-radius:5px;"/></g:link>
                     <div class="card-body" style="line-height: 0px;">
                         <p class="d-inline text-light" style="background: #00CED1; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">${course.coursePrice}</p>
                         <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>${course.courseName}</a></h5>

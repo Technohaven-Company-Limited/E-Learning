@@ -6,6 +6,7 @@ class Lesson {
     String lessonDescription
     String lessonDuration
     String lessonCourse
+    String lessonFile
 
     static constraints = {
         lessonCode nullable: false, unique: true
@@ -13,5 +14,6 @@ class Lesson {
         lessonDescription nullable: false
         lessonDuration nullable: false
         lessonCourse nullable: true
+        lessonFile nullable: true
     }
 }

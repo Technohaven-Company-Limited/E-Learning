@@ -12,7 +12,7 @@ import java.sql.ResultSet
 @Transactional
 class LessonController {
 
-    static  allowedMethods = [get: "GET", list: "GET", delete: "DELETE" , save: "POST", update: "PUT"]
+    static  allowedMethods = [get: "GET", list: "GET", save: "POST", update: "PUT"]
 
     def dataSource
     LessonService lessonService
@@ -42,8 +42,30 @@ class LessonController {
         if (lesson.hasErrors()) {
             render(view: "uploadLesson", model: [users: lesson])
         } else {
-            lessonService.save(lesson)
-            redirect(action: "index")
+            try {
+                def uploadedFile = request.getPart('lessonFileUpload')
+
+                if (uploadedFile && uploadedFile.getSize() > 0) {
+                    // Specify the directory where you want to save the uploaded file
+                    String uploadDir = "D:\\Mohaiminul\\Github\\E-Learning\\grails-app\\assets\\videos\\"
+                    // Create the upload directory if it doesn't exist
+                    new File(uploadDir).mkdirs()
+                    // Get the original filename
+                    String originalFilename = uploadedFile.getSubmittedFileName()
+                    // Save the uploaded file to the upload directory
+                    uploadedFile.write(uploadDir + originalFilename)
+                    lesson.setLessonFile(originalFilename);
+
+                    flash.message = "File uploaded successfully!"
+                } else {
+                    flash.error = "No file selected."
+                }
+
+                lessonService.save(lesson)
+                redirect(action: "index")
+            }catch(Exception e){
+                e.printStackTrace()
+            }
         }
     }
 
@@ -55,8 +77,30 @@ class LessonController {
         if (lesson.hasErrors()) {
             render(view: "edit", model: [lesson: lesson])
         } else {
-            lessonService.save(lesson)
-            redirect(action: "index")
+            try {
+                def uploadedFile = request.getPart('lessonFileUpload')
+
+                if (uploadedFile && uploadedFile.getSize() > 0) {
+                    // Specify the directory where you want to save the uploaded file
+                    String uploadDir = "D:\\Mohaiminul\\Github\\E-Learning\\grails-app\\assets\\videos\\"
+                    // Create the upload directory if it doesn't exist
+                    new File(uploadDir).mkdirs()
+                    // Get the original filename
+                    String originalFilename = uploadedFile.getSubmittedFileName()
+                    // Save the uploaded file to the upload directory
+                    uploadedFile.write(uploadDir + originalFilename)
+                    lesson.setLessonFile(originalFilename);
+
+                    flash.message = "File uploaded successfully!"
+                } else {
+                    flash.error = "No file selected."
+                }
+
+                lessonService.save(lesson)
+                redirect(action: "index")
+            }catch(Exception e){
+                e.printStackTrace()
+            }
         }
     }
 
