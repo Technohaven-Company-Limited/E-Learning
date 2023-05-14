@@ -105,17 +105,22 @@ class CourseController {
 
     def userhome(){
         def course = Course.list()
-        render(view:'../userHome', model:[coursess: course])
+        render(view:'../dashboard/userHome', model:[coursess: course])
     }
 
-    List<Course> queryCourseWithName(String trainer) {
-        def course = Course.findAllByCourseTrainer(trainer)
-        render(view:'../customList', model:[coursesss: course])
-    }
+//    List<Course> queryCourseWithName(String trainer) {
+//        def course = Course.findAllByCourseTrainer(trainer)
+//        render(view:'../trainerHome', model:[coursesss: course])
+//    }
 
     def lessonList(String code){
         def lesson = Lesson.findAllByLessonCourse(code)
         render(view:'lessonList', model:[lessons: lesson])
+    }
+
+    def lessonListWithFile(String code){
+        def lesson = Lesson.findAllByLessonCourse(code)
+        render(view:'lessonListWithFile', model:[lessonss: lesson])
     }
 
 }

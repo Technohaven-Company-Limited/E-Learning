@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <div class="card mt-5">
+            <div class="card mt-5" style="box-shadow: 10px 10px 8px LightGray;">
                 <div class="card-header bg-info"><h3 class="text-light">Upload Lesson</h3></div>
                 <div class="card-body">
                     <g:form controller="lesson" action="update" method="PUT" enctype="multipart/form-data">

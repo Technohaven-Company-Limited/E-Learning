@@ -6,9 +6,6 @@ import net.sf.jasperreports.engine.JasperCompileManager
 import net.sf.jasperreports.engine.JasperExportManager
 import net.sf.jasperreports.engine.JasperFillManager
 
-import java.sql.PreparedStatement
-import java.sql.ResultSet
-
 @Transactional
 class LessonController {
 
@@ -116,6 +113,14 @@ class LessonController {
         def jasperPrint = JasperFillManager.fillReport(jasperReport, params, con)
         response.contentType = 'application/pdf'
         JasperExportManager.exportReportToPdfStream(jasperPrint, response.outputStream)
+    }
+
+    def lessonListForTrainer(){
+        def auth = AppUtil.getAppSession()["AUTHORIZED"]
+        def users = auth.user
+        def courseCode = Course.findAllByCourseTrainer(users.fullName)
+        def lessonList = Lesson.findAllByLessonCourse(courseCode)
+        render(view:'../lesson/lessonListForTrainer', model:[lessonss: lessonList])
     }
 
 }

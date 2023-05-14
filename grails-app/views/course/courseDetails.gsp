@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <div class="card mt-5">
+            <div class="card mt-5" style="box-shadow: 10px 10px 8px LightGray;">
                 <div class="card-header bg-info"><h3 class="text-light">About Course</h3></div>
                 <g:if test="${show}">
                     <div class="row card-body">
@@ -46,7 +46,7 @@
                                     <h4 class="text-center">Description</h4>
                                     <p style="align-items: center;">${show.courseDescription}</p>
                                 <br>
-                                <g:link controller="course" action="lessonList" params="[code: show.courseCode]">Show all lessons</g:link>
+                                <g:link class="btn btn-outline-success btn-block" style="text-decoration: none" controller="course" action="lessonList" params="[code: show.courseCode]">Show all lessons</g:link>
                                 </div>
                             </div>
                         </div>

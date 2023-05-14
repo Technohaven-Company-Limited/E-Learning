@@ -1,5 +1,7 @@
 package elearning
 
+import grails.web.servlet.mvc.GrailsParameterMap
+
 class AuthenticationController {
 
     static  allowedMethods = [get: "GET", list: "GET", save: "POST", update: "PUT"]
@@ -21,7 +23,10 @@ class AuthenticationController {
                 return true
             }
             if (users.roleName == "TRAINER"){
-                redirect(controller: "dashboard", action: "index")
+                def trainer = users.fullName
+                def course = Course.findAllByCourseTrainer(trainer)
+                render(view:'../dashboard/trainerHome', model:[courses: course])
+//                redirect(controller: "dashboard", action: "index")
                 return true
             }
             if (users.roleName == "ADMINISTRATOR"){
