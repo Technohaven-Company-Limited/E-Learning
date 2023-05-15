@@ -4,7 +4,7 @@ class ContactUsController {
 
     ContactUsService contactUsService
 
-    static  allowedMethods = [get: "GET", save: "POST"]
+    static  allowedMethods = [get: "GET", save: "POST", update: "PUT"]
 
 
 
@@ -18,9 +18,11 @@ class ContactUsController {
     }
 
 
-//    def get(Long id){
-//        respond contactUsService.get(id)
-//    }
+    def get(Long id){
+//        contactUsService.get(id)
+        def message = ContactUs.findById(id)
+        render(view:'reply', model:[reply: message])
+    }
 //
 //    def delete(Long id){
 //        respond contactUsService.delete(id)
@@ -33,10 +35,16 @@ class ContactUsController {
             contactUsService.save(contactUs)
 //            render(view: "loginPage")
 //            redirect(action: "index")
-
         }
     }
 
-
+    def update(ContactUs contactUs) {
+        if (contactUs.hasErrors()) {
+            render(view: "reply", model: [contactsus: contactUs])
+        } else {
+            contactUsService.save(contactUs)
+            redirect(action: "index")
+        }
+    }
 
 }

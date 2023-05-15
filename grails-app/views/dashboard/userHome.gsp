@@ -21,8 +21,8 @@
             <nav class="nav">
                 <g:link class="nav-link text-light active" aria-current="page" href="/dashboard/index">Home</g:link>
 %{--                <g:link class="nav-link text-light" controller="lesson" action="create">Lessons</g:link>--}%
-                <g:link class="nav-link text-light" controller="course" action="create">Courses</g:link>
                 <g:link class="nav-link text-light" controller="contactUs" action="create">Contact Us</g:link>
+                <g:link class="nav-link text-light" controller="course" action="create">Search</g:link>
             </nav>
         </div>
 

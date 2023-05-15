@@ -5,11 +5,13 @@ class ContactUs {
     String email
     String subject
     String message
+    String replyMessage
 
     static constraints = {
-        fullname blank: false, nullable: false, size: 5..25
-        email blank: false, nullable: false, email: true
-        subject blank: false, nullable: true
-        message blank: false, nullable: false
+        fullname nullable: true, size: 5..25
+        email nullable: true, email: true
+        subject nullable: true
+        message nullable: true
+        replyMessage nullable: true
     }
 }

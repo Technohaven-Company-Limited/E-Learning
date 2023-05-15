@@ -16,6 +16,7 @@
             <th>Email</th>
             <th>Subject</th>
             <th>Message Body</th>
+            <th>Message Reply</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -26,8 +27,9 @@
                 <td>${contact.email}</td>
                 <td>${contact.subject}</td>
                 <td>${contact.message}</td>
+                <td>${contact.replyMessage}</td>
                 <td>
-                    <g:link class="btn btn-sm btn-primary" style="text-decoration: none">Reply</g:link>
+                    <g:link class="btn btn-sm btn-primary" style="text-decoration: none" action="get" params="[id: contact.id]">Reply</g:link>
                 </td>
             </tr>
         </g:each>

@@ -66,7 +66,7 @@
                 <g:link class="nav-link text-light" controller="lesson" action="create">Lessons</g:link>
                 <g:link class="nav-link text-light" controller="lesson" action="lessonListForTrainer">Lessons List</g:link>
                 <g:link class="nav-link text-light" controller="course" action="create">Courses</g:link>
-                <g:link class="nav-link text-light" controller="lesson" action="">Courses List</g:link>
+                <g:link class="nav-link text-light" controller="course" action="queryCourseWithName">Courses List</g:link>
                 <g:link class="nav-link text-light" controller="contactUs" action="create">Contact Us</g:link>
             </nav>
         </div>

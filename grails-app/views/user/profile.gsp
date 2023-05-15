@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <div class="card mt-5">
+            <div class="card mt-5" style="box-shadow: 10px 10px 8px LightGray;">
                 <div class="card-header bg-info"><h3 class="text-light">Profile</h3></div>
                 <div class="card-body">
                     <div class="row">

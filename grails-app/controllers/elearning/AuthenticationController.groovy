@@ -19,7 +19,7 @@ class AuthenticationController {
             def auth = AppUtil.getAppSession()["AUTHORIZED"]
             def users = auth.user
             if (users.roleName == "USER"){
-                redirect(controller: "course", action: "userhome")
+                redirect(controller: "dashboard", action: "userHome")
                 return true
             }
             if (users.roleName == "TRAINER"){
