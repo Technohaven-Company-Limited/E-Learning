@@ -122,11 +122,11 @@ environments:
     test:
         dataSource:
             dbCreate: update
-            url: jdbc:h2:mem:testDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://localhost/elearning
     production:
         dataSource:
-            dbCreate: none
-            url: jdbc:h2:./prodDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            dbCreate: update
+            url: jdbc:mysql://localhost/elearning
             properties:
                 jmxEnabled: true
                 initialSize: 5

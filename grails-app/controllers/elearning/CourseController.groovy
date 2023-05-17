@@ -1,5 +1,7 @@
 package elearning
 
+import grails.util.Holders
+
 import javax.servlet.http.HttpServletRequest
 import org.springframework.web.multipart.MultipartFile
 
@@ -45,7 +47,11 @@ class CourseController {
 
                 if (uploadedFile && uploadedFile.getSize() > 0) {
                     // Specify the directory where you want to save the uploaded file
+//                    String rootPath = Holders.getServletContext()
+//                    String uploadDir = rootPath?.getAt("getRealPath")
+//                    print(uploadDir)
                     String uploadDir = "D:\\Mohaiminul\\Github\\E-Learning\\grails-app\\assets\\images\\"
+//                    String uploadDir = "https://drive.google.com/drive/folders/1--pwQ6SE2N-SLHoCGJTGwN7G4mMwqmrm?usp=share_link"
                     // Create the upload directory if it doesn't exist
                     new File(uploadDir).mkdirs()
                     // Get the original filename

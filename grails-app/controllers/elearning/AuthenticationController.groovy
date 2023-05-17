@@ -1,5 +1,6 @@
 package elearning
 
+import grails.util.Holders
 import grails.web.servlet.mvc.GrailsParameterMap
 
 class AuthenticationController {
