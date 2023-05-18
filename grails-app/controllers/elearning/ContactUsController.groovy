@@ -14,7 +14,6 @@ class ContactUsController {
     }
 
     def create() {
-        render(view: "contactPage")
     }
 
 
