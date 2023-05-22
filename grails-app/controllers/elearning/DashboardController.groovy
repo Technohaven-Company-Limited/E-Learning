@@ -9,6 +9,14 @@ class DashboardController {
 
     def userHome(){
         def course = Course.list()
-        render(view:'../dashboard/userHome', model:[coursess: course])
+        render(view:'userHome', model:[coursess: course])
+    }
+
+    List<Course> queryCourseWithName() {
+        def auth = AppUtil.getAppSession()["AUTHORIZED"]
+        def users = auth.user
+        def trainer = users.fullName
+        def course = Course.findAllByCourseTrainer(trainer)
+        render(view:'trainerHome', model:[courses: course])
     }
 }

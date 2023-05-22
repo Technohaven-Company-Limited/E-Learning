@@ -127,4 +127,10 @@ class CourseController {
         render(view:'lessonListWithFile', model:[lessonss: lesson])
     }
 
+    def filterCourseWithName(){
+        def query = params.search
+        def course = Course.findAllByCourseNameIlike "%${query}%"
+        render(view:'filterCourse', model:[coursess: course])
+    }
+
 }

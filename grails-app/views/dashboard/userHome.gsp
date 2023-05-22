@@ -17,16 +17,25 @@
             </div>
         </div>
 
-        <div class="col-5" style=" padding-top: 10px;">
+        <div class="col-3" style=" padding-top: 10px;">
             <nav class="nav">
-                <g:link class="nav-link text-light active" aria-current="page" href="/dashboard/index">Home</g:link>
-%{--                <g:link class="nav-link text-light" controller="lesson" action="create">Lessons</g:link>--}%
+                <g:link class="nav-link text-light" controller="dashboard" action="userHome">Home</g:link>
                 <g:link class="nav-link text-light" controller="contactUs" action="create">Contact Us</g:link>
-                <g:link class="nav-link text-light" controller="course" action="create">Search</g:link>
             </nav>
         </div>
 
-        <div class="col-4">
+        <div class="col-3" style=" padding-top: 10px;">
+            <nav class="nav">
+                <g:form controller="course" action="filterCourseWithName" method="POST">
+                    <g:textField name="search" value=""/>
+                    <span>
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </span>
+                </g:form>
+            </nav>
+        </div>
+
+        <div class="col-3">
             <nav class="nav d-flex flex-row-reverse">
                 <g:link class="nav-link text-danger" style="padding-top: 14px; background: transparent; border: none;" controller="authentication" action="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</g:link>
                 <g:link class="nav-link text-light" style="padding-top: 14px;" controller="user" action="get"><i class="fa-solid fa-user"></i> Profile</g:link>
@@ -49,11 +58,11 @@
     <div class="row">
         <g:each controller="course" in="${coursess}" var="course">
             <div class="col-3 mb-5">
-                <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">
+                <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 360px;">
                     <g:link controller="course" action="show" params="[id: course.id]"><g:img class="card-img-top" dir="images" file="${course.courseLogo}" alt="Card image cap" style="height: 150px; border-radius:5px;"/></g:link>
                     <div class="card-body" style="line-height: 0px;">
-                        <p class="d-inline text-light" style="background: #00CED1; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">${course.coursePrice}</p>
-                        <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>${course.courseName}</a></h5>
+                        <p class="d-inline text-light" style="background: #00CED1; padding:0 5px 0 5px; border-radius: 15px; font-size: 14px; font-weight: 600;"><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${course.coursePrice}</p>
+                        <h5 class="card-title" style="font-size: 14px; font-weight: 600; margin-top: 10px;"><a>${course.courseName}</a></h5>
                         <table style="font-size: 11px;">
                             <tr>
                                 <td>Instructor</td>

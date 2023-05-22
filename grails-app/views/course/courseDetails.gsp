@@ -52,9 +52,9 @@
                         </div>
 
                         <div class="col-md-4" style=" border-radius: 15px; margin: 10px 0 10px 0; ">
-                            <div style="background: white; border: 1px solid #33ccc5; border-radius: 15px; padding: 10px;">
+                            <div style="background: white; border: 1px solid #33ccc5; border-radius: 10px; padding: 10px;">
                                 <div class="text-center">
-                                    <p class="d-inline text-light" style="background: #FF6347; padding:0 5px 0 5px; border-radius: 15px; font-size: 18px; font-weight: 600;">${show.coursePrice}</p>
+                                    <p class="d-inline text-light" style="background: #FF6347; padding:0 8px 0 8px; border-radius: 10px; font-size: 18px; font-weight: 600;"><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${show.coursePrice}</p>
                                 </div>
                                 <table class="table">
                                     <tr>
@@ -78,6 +78,17 @@
                                     <g:link class="btn btn-sm btn-info text-light" style="padding: 5px; text-decoration: none;">Enroll Now</g:link>
                                 </div>
                             </div>
+                            <br>
+                            <div style="background: white; border: 1px solid #33ccc5; border-radius: 5px; padding: 10px;">
+                                <p style="font-weight: bold; color: #5a6268">If you have any query please knock us on mail</p>
+                                <form method="POST">
+                                    <input type="email" name="email" style="border: 1px solid #5a6268; border-radius: 5px">
+                                    <span>
+                                        <button class="btn btn-secondary" type="submit" title="send"><i class="fa-solid fa-paper-plane"></i></button>
+                                    </span>
+                                </form>
+                            </div>
+
                             <div class="cpy" style="border: none;">
                                 <div class="container">
                                     <div class="row">

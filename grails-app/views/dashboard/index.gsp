@@ -21,7 +21,7 @@
                 <g:link class="nav-link text-light active" aria-current="page" href="/dashboard/index">Home</g:link>
                 <g:link class="nav-link text-light" controller="lesson" action="index">Lessons</g:link>
                 <g:link class="nav-link text-light" controller="course" action="index">Courses</g:link>
-                <g:link class="nav-link text-light" controller="contactUs" action="index">Contact Us</g:link>
+                <g:link class="nav-link text-light" controller="contactUs" action="index">Messages</g:link>
             </nav>
         </div>
 
@@ -51,7 +51,7 @@
                 <div class="card hvr-grow" style="border-radius:10px; width: 250px; height: 350px;">
                     <g:link controller="course" action="show" params="[id: course.id]"><g:img class="card-img-top" dir="images" file="${course.courseLogo}" alt="Card image cap" style="height: 150px; border-radius:5px;"/></g:link>
                     <div class="card-body" style="line-height: 0px;">
-                        <p class="d-inline text-light" style="background: #00CED1; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;">${course.coursePrice}</p>
+                        <p class="d-inline text-light" style="background: #00CED1; padding:0 5px 0 5px; border-radius: 15px; font-size: 11px; font-weight: 600;"><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${course.coursePrice}</p>
                         <h5 class="card-title" style="font-size: 11px; font-weight: 600; margin-top: 10px;"><a>${course.courseName}</a></h5>
                         <table style="font-size: 11px;">
                             <tr>

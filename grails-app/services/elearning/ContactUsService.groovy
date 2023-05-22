@@ -9,9 +9,9 @@ interface ContactUsService {
 
     ContactUs get(Serializable id)
 
-//    List<ContactUs> list(Map args)
-//
-//    Long count()
+    List<ContactUs> list(Map args)
+
+    Long count()
 
     void delete(Serializable id)
 
