@@ -11,7 +11,7 @@ class AuthenticationController {
 
     def login() {
         if (authenticationService.isAuthenticated()) {
-            redirect(controller: "dashboard", action: "index")
+//            redirect(controller: "dashboard", action: "index")
         }
     }
 

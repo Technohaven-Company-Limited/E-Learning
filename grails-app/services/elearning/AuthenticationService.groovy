@@ -1,7 +1,9 @@
 package elearning
 
+import grails.gorm.transactions.Transactional
 import grails.web.servlet.mvc.GrailsParameterMap
 
+@Transactional
 class AuthenticationService {
 
     private static final String AUTHORIZED = "AUTHORIZED"

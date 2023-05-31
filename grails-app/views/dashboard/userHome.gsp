@@ -29,7 +29,7 @@
                 <g:form controller="course" action="filterCourseWithName" method="POST">
                     <g:textField name="search" value=""/>
                     <span>
-                        <button class="btn btn-primary" type="submit">Search</button>
+                        <button class="btn" style="background: lightcyan; color: darkgrey" type="submit">Search</button>
                     </span>
                 </g:form>
             </nav>
