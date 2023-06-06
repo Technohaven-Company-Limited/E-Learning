@@ -15,6 +15,11 @@ class CourseController {
         def course = Course.list()
         [courses: course]
     }
+    def index1() {
+        def course = Course.list()
+        [courses: course]
+        render(view: "index1", model: [admin: course])
+    }
 
     def create() {
         render(view: "uploadCourse")

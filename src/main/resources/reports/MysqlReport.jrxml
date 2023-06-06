@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MysqlReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="41784e97-6b0a-41e9-ad66-4c88813beb09">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mysql Data Adapter"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM elearning.lesson]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
+	</field>
+	<field name="version" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="version"/>
+		<property name="com.jaspersoft.studio.field.label" value="version"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
+	</field>
+	<field name="lesson_duration" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lesson_duration"/>
+		<property name="com.jaspersoft.studio.field.label" value="lesson_duration"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
+	</field>
+	<field name="lesson_course" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lesson_course"/>
+		<property name="com.jaspersoft.studio.field.label" value="lesson_course"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
+	</field>
+	<field name="lesson_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lesson_description"/>
+		<property name="com.jaspersoft.studio.field.label" value="lesson_description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
+	</field>
+	<field name="lesson_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lesson_code"/>
+		<property name="com.jaspersoft.studio.field.label" value="lesson_code"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
+	</field>
+	<field name="lesson_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lesson_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="lesson_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lesson"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="81" height="30" uuid="7767e0c7-38df-42e0-ae84-5761c5ef11f5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84ed2a99-b944-4c81-b7ea-ee502b48623c"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="0" width="79" height="30" uuid="05e7eb54-e145-41a3-b2ed-5dec6e9fd263">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="970df88d-a108-48cd-8fa4-11e14097f07e"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Version]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="79" height="30" uuid="576db029-7fc1-4656-bd9b-3fbb532e6881">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70e8abc1-3466-4cc2-aa28-8217399f3264"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LessonDuration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="0" width="79" height="30" uuid="cf602b32-1f16-47e0-8c52-0d74e916bd2c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="87a0cf58-af6e-4806-8bce-511e04980cbc"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LessonCourse]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="0" width="79" height="30" uuid="8236d1b9-fdb1-44de-801f-456411aa847b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="05f0ec24-b01a-40a3-a2ae-e6dd830c7a1c"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="0" width="79" height="30" uuid="dc410c47-8723-466f-a630-6f11ec78b7f3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2bded5e0-ca68-4d7d-9e63-9f7d19303cbf"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="0" width="79" height="30" uuid="28c81ac0-4611-4351-b7fc-491907ccd32d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ec804344-0983-44bf-8b2e-ed068d7039c1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="81" height="30" uuid="2e97d8a4-8120-42bc-9b12-260b9e29118b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84ed2a99-b944-4c81-b7ea-ee502b48623c"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="79" height="30" uuid="f2437235-f072-4025-ab1b-0e40cb36b84e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="970df88d-a108-48cd-8fa4-11e14097f07e"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{version}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="79" height="30" uuid="2beb9585-54c3-4976-b430-2a4b9e5cb0cd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70e8abc1-3466-4cc2-aa28-8217399f3264"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lesson_duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="0" width="79" height="30" uuid="5fcbd2a1-c170-4eea-8563-048c0187c22b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="87a0cf58-af6e-4806-8bce-511e04980cbc"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lesson_course}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="79" height="30" uuid="d3221e5c-d114-49c6-a487-e69b352e1cde">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="05f0ec24-b01a-40a3-a2ae-e6dd830c7a1c"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lesson_description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="0" width="79" height="30" uuid="d81171d3-fb15-4da7-9d61-8a451f38c478">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2bded5e0-ca68-4d7d-9e63-9f7d19303cbf"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lesson_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="0" width="79" height="30" uuid="c1c31a69-bfcc-41e9-951f-9a9a10c6a497">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ec804344-0983-44bf-8b2e-ed068d7039c1"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lesson_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

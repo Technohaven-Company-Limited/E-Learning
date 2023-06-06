@@ -1,6 +1,6 @@
 package elearning
 
-class UserInterceptor {
+class ideaUserInterceptor {
 
     AuthenticationService authenticationService
 

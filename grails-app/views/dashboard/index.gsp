@@ -20,7 +20,11 @@
             <nav class="nav">
                 <g:link class="nav-link text-light active" aria-current="page" href="/dashboard/index">Home</g:link>
                 <g:link class="nav-link text-light" controller="lesson" action="index">Lessons</g:link>
-                <g:link class="nav-link text-light" controller="course" action="index">Courses</g:link>
+
+                <g:link class="nav-link text-light" controller="course" action="index1" >Courses</g:link>
+
+                <g:link class="nav-link text-light" controller="course"  action="index">Courses</g:link>
+
                 <g:link class="nav-link text-light" controller="contactUs" action="index">Messages</g:link>
             </nav>
         </div>

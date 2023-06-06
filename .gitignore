@@ -10,3 +10,9 @@ out/
 .project
 .settings
 .classpath
+src/main/resources/reports/myfirstreport.jrxml
+grails-app/reports/MysqlReport.jrxml
+grails-app/controllers/elearning/UserController.groovy
+grails-app/controllers/elearning/LessonController.groovy
+grails-app/controllers/elearning/CourseController.groovy
+grails-app/conf/application.yml
